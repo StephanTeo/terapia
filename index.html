@@ -17,8 +17,36 @@ body { font-family: 'Inter', sans-serif; }
 .gradient-offer { background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%); }
 .gradient-guarantee { background: linear-gradient(135deg, #FEF3C7 0%, #FEF9E7 100%); }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+// Comentário: Inicializa o Meta Pixel e registra o evento de PageView
+!(function(f,b,e,v,n,t,s){
+  // Comentário: Evita reinicializar se já estiver definido
+  if(f.fbq) return;
+  n = f.fbq = function(){
+    // Comentário: Enfileira chamadas até carregar a biblioteca do Facebook
+    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+  };
+  if(!f._fbq) f._fbq = n;
+  n.push = n; n.loaded = true; n.version = '2.0';
+  n.queue = [];
+  t = b.createElement(e); t.async = true;
+  t.src = v;
+  s = b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t, s);
+})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+// Comentário: Configura o ID do seu pixel
+fbq('init', '8762777033751484');
+// Comentário: Dispara o evento de visualização de página
+fbq('track', 'PageView');
+</script>
 </head>
 <body class="bg-white">
+<noscript>
+  <!-- Comentário: Fallback quando o JavaScript está desativado -->
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=8762777033751484&ev=PageView&noscript=1"/>
+</noscript>
 <!-- Hero Section -->
 <section class="gradient-bg min-h-screen flex flex-col justify-center items-center px-4 py-16">
 <div class="max-w-md mx-auto text-center">
