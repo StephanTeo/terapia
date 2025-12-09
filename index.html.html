@@ -336,7 +336,6 @@ Converse com nosso anfitrião e tire suas dúvidas
 </div>
 </div>
 </section>
-</修改前>
 <!-- Offer Section -->
 <section class="gradient-offer py-16 px-4">
 <div class="max-w-md mx-auto">
@@ -404,34 +403,43 @@ Transformando vidas através da fé genuína
 </div>
 </footer>
 <script id="scroll-effects">
+// Comentário: Adiciona interação de clique em botões com animação de escala
 document.addEventListener('DOMContentLoaded', function() {
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-button.addEventListener('click', function() {
-this.style.transform = 'scale(0.98)';
-setTimeout(() => {
-this.style.transform = 'scale(1)';
-}, 150);
-});
-});
+  // Comentário: Seleciona todos os botões da página
+  const buttons = document.querySelectorAll('button');
+  // Comentário: Aplica o efeito de clique em cada botão
+  buttons.forEach(button => {
+    // Comentário: Ao clicar, reduz e restaura a escala suavemente
+    button.addEventListener('click', function() {
+      this.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 150);
+    });
+  });
 });
 </script>
 <script id="countdown-timer">
+// Comentário: Inicializa e atualiza contadores regressivos marcados com data-countdown
 document.addEventListener('DOMContentLoaded', function() {
-const countdownElements = document.querySelectorAll('[data-countdown]');
-function updateCountdown() {
-const now = new Date().getTime();
-const endTime = now + (24 * 60 * 60 * 1000);
-const timeLeft = endTime - now;
-const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-countdownElements.forEach(element => {
-element.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-});
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  // Comentário: Seleciona elementos que exibem o cronômetro
+  const countdownElements = document.querySelectorAll('[data-countdown]');
+  // Comentário: Função que recalcula o tempo restante a cada segundo
+  function updateCountdown() {
+    const now = new Date().getTime();
+    // Comentário: Define o término para 24h a partir do momento atual
+    const endTime = now + (24 * 60 * 60 * 1000);
+    const timeLeft = endTime - now;
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    // Comentário: Atualiza o conteúdo de cada elemento com o formato HH:MM:SS
+    countdownElements.forEach(element => {
+      element.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    });
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 });
 </script>
 </body>
